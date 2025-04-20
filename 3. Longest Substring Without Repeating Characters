@@ -1,3 +1,4 @@
+## 用set 重複刪除直到沒有重複的字元
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -17,3 +18,25 @@ class Solution(object):
             length = max(length, right - left + 1)
 
         return length
+
+'''
+## 用dict 紀錄最後一次出現的位置 當重複就移動到重覆位置加1的地方
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        length = 0
+        long_str = {}
+        left = 0
+
+        for right in range(len(s)):
+            if (s[right] in long_str):
+                left = max(long_str[s[right]] + 1, left)
+            
+            long_str[s[right]] = right
+            length = max(length, right - left + 1)
+
+        return length
+'''
