@@ -1,4 +1,4 @@
-## 用set 重複刪除直到沒有重複的字元
+## 用set() 重複刪除直到沒有重複的字元
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -20,7 +20,7 @@ class Solution(object):
         return length
 
 '''
-## 用dict 紀錄最後一次出現的位置 當重複就移動到重覆位置加1的地方
+## 用dict() key:value(char:index) 紀錄最後一次出現的位置 當重複就移動到重覆位置加1的地方
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
